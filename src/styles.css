@@ -1878,7 +1878,8 @@ small {
   margin: 44px 0 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 20px;
+  max-width: 760px;
 }
 .journey-photos figure {
   margin: 0;
@@ -2029,12 +2030,21 @@ small {
     right: 10px;
   }
   .journey-photos {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    margin-top: 30px;
+    gap: 10px;
+    margin-top: 26px;
   }
   .journey-photos img {
-    aspect-ratio: 4 / 5;
+    border-radius: 6px;
+  }
+  .journey-photos figcaption {
+    margin-top: 8px;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    line-height: 1.35;
+  }
+  .journey-photos figcaption small {
+    display: block;
+    margin: 0 0 2px;
   }
   .press {
     padding: 46px 0;
