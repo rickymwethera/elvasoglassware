@@ -93,8 +93,9 @@ export default function Home() {
           </LinkButton>
         </div>
         <img
-          src={A + "collecting.webp"}
-          alt="The El Vaso team sorting collected glass bottles"
+          className="story-hero-photo"
+          src={A + "sorting-bottles.webp"}
+          alt="A gloved hand picking up a bottle while collected glass bottles are sorted"
         />
         <div className="story-benefits">
           <div className="eyebrow">THE EL VASO DIFFERENCE</div>
