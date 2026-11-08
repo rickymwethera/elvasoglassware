@@ -41,6 +41,11 @@ export default function Header({
             {menu ? <X /> : <Menu />}
           </button>
           <button className="wordmark" onClick={() => go("/")}>
+            <img
+              className="wordmark-mark"
+              src={import.meta.env.BASE_URL + "images/logo-mark.png"}
+              alt=""
+            />
             EL VASO
           </button>
           <nav className={menu ? "open" : ""}>

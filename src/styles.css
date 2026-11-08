@@ -123,6 +123,9 @@ small {
 .wordmark {
   font-size: 1.95rem;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   letter-spacing: -0.045em;
   color: #15362c;
   padding: 0;
@@ -551,6 +554,10 @@ small {
   gap: 38px;
   padding-top: 61px;
   padding-bottom: 48px;
+}
+.wordmark-mark {
+  height: 50px;
+  width: auto;
 }
 .footer .wordmark {
   color: white;
