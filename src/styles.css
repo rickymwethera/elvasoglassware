@@ -1924,6 +1924,54 @@ small {
   color: #d1ded5;
   margin: 0;
 }
+.journey-photo {
+  margin: 56px 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 340px)) 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.journey-photo figure {
+  margin: 0;
+}
+.journey-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.journey-photo figcaption {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e0b77a;
+}
+.journey-photo h3 {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 0 12px 24px;
+}
+.journey-photo p {
+  color: #d1ded5;
+  max-width: 440px;
+  margin: 0 0 0 24px;
+}
+@media (max-width: 900px) {
+  .journey-photo {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .journey-photo > div {
+    grid-column: 1 / -1;
+  }
+  .journey-photo h3,
+  .journey-photo p {
+    margin-left: 0;
+  }
+}
 .press {
   background: #f9eee4;
   padding: 64px 0;

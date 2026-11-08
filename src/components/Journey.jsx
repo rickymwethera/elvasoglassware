@@ -1,3 +1,4 @@
+import { A } from "../utils";
 import { Recycle, Scissors, Sparkles, Wine, Utensils } from "lucide-react";
 
 // Steps shown in the Journey section: [icon, title, description].
@@ -39,6 +40,33 @@ export default function Journey() {
             </li>
           ))}
         </ol>
+        <div className="journey-photo">
+          <figure>
+            <img
+              src={A + "bottle-sacks.webp"}
+              alt="Sacks of collected bottles delivered to the El Vaso workshop"
+              loading="lazy"
+            />
+            <figcaption>Delivered in bulk</figcaption>
+          </figure>
+          <figure>
+            <img
+              src={A + "workshop-racks.webp"}
+              alt="Collected bottles sorted by colour on racks above the El Vaso cutting machine, with freshly cut green glasses"
+              loading="lazy"
+            />
+            <figcaption>Sorted, then cut</figcaption>
+          </figure>
+          <div>
+            <h3>Inside our workshop</h3>
+            <p>
+              Bottles arrive at our workshop in sacks from bars, restaurants
+              and members of the public. We sort them by colour on these racks,
+              then cut them on the machine below. The green glasses on the
+              bench started out as bottles just like these.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
