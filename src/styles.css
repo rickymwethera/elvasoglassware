@@ -121,12 +121,13 @@ small {
   gap: 22px;
 }
 .wordmark {
-  font-size: 1.95rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2.35rem;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
   color: #15362c;
   padding: 0;
 }
@@ -559,9 +560,16 @@ small {
   height: 50px;
   width: auto;
 }
+.wordmark-text {
+  height: 34px;
+  width: auto;
+}
+.footer .wordmark-text {
+  height: 40px;
+}
 .footer .wordmark {
   color: white;
-  font-size: 2.3rem;
+  font-size: 2.7rem;
 }
 .footer p {
   color: #d1ded5;
@@ -1346,7 +1354,7 @@ small {
     gap: 10px;
   }
   .wordmark {
-    font-size: 1.75rem;
+    font-size: 2.1rem;
   }
   .mobile-menu {
     display: block;

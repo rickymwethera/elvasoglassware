@@ -10,7 +10,11 @@ export default function Footer() {
       <div className="container footer-columns">
         <div className="footer-brand">
           <button className="wordmark" onClick={() => go("/")}>
-            EL VASO
+            <img
+              className="wordmark-text"
+              src={import.meta.env.BASE_URL + "images/logo-wordmark-white.png"}
+              alt="El Vaso"
+            />
           </button>
           <p>
             Old bottles, new stories. Thoughtfully upcycled glassware,
