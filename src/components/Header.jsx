@@ -46,7 +46,11 @@ export default function Header({
               src={import.meta.env.BASE_URL + "images/logo-mark.png"}
               alt=""
             />
-            El Vaso
+            <img
+              className="wordmark-text"
+              src={import.meta.env.BASE_URL + "images/logo-wordmark.png"}
+              alt="El Vaso"
+            />
           </button>
           <nav className={menu ? "open" : ""}>
             {nav.map(([label, to]) => (
