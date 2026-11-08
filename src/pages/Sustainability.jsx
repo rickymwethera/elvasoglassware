@@ -12,10 +12,10 @@ const stats = [
 ];
 
 const pillars = [
-  [Trash2, "Less glass in dumpsites", "Every bottle we collect stays out of the dumpsite, however small the pieces end up."],
+  [Trash2, "Less glass in dumpsites", "Every bottle we collect is kept out of the dumpsite, right down to the smallest broken pieces."],
   [Recycle, "Nothing wasted", "Offcuts are crushed and kept in production, with glass terrazzo planned next."],
   [Leaf, "A smaller footprint", "Cutting and finishing existing glass uses far less energy than making new glass."],
-  [Users, "People first", "Our workshop creates steady, skilled work, especially for women in our community."],
+  [Users, "People first", "Our workshop creates steady, skilled work in our community."],
 ];
 
 // The "Sustainability" page: our environmental impact and process.

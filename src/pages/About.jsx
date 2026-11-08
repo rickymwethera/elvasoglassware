@@ -25,17 +25,17 @@ import InfoGrid from "../components/InfoGrid";
 const objectives = [
   [Recycle, "Transform glass waste", "Turning discarded glass bottles into beautiful, functional products."],
   [Leaf, "Environmental sustainability", "Reducing landfill waste and minimising our environmental impact."],
-  [Users, "Community empowerment", "Creating employment opportunities, especially for marginalised women."],
+  [Users, "Community empowerment", "Creating employment opportunities in our community."],
   [HeartHandshake, "Social responsibility", "Supporting community development through sustainable practices."],
 ];
 
 const reasons = [
   [Gem, "Unique, sustainable pieces", "Repurposed glass products that reduce waste and support a healthier environment."],
-  [Users, "Social impact", "Every order creates opportunities for artisans and marginalised communities."],
+  [Users, "Social impact", "Every order creates work for local artisans."],
   [Palette, "Made to your brief", "Personalised engraving, colours and custom sizes."],
   [Factory, "Eco-friendly production", "Upcycling keeps our environmental footprint small."],
   [ShieldCheck, "Quality and durability", "Premium craftsmanship and smooth, safe edges built to last."],
-  [GraduationCap, "Education and awareness", "Workshops and community events that promote sustainable living."],
+  [GraduationCap, "Sustainable living", "Encouraging everyone to reuse, waste less and choose upcycled."],
 ];
 
 const audiences = [
@@ -61,7 +61,7 @@ export default function About() {
             El Vaso Glassware transforms discarded glass bottles into stylish,
             functional products through innovative upcycling. We combine
             sustainability, creativity and social responsibility by supporting
-            local artisans and empowering marginalised communities in Nairobi.
+            local artisans in Nairobi.
           </p>
           <div className="actions">
             <button className="btn btn-primary" onClick={() => go("/our-story")}>
