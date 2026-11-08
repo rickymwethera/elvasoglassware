@@ -1154,6 +1154,9 @@ small {
 .story-hero {
   min-height: 450px;
 }
+.story-hero .story-hero-photo {
+  object-position: center 22%;
+}
 .story-body {
   max-width: 900px;
   text-align: center;
