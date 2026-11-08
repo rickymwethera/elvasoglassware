@@ -1874,103 +1874,38 @@ small {
 .journey .eyebrow {
   color: #e0b77a;
 }
-.journey-steps {
-  list-style: none;
-  padding: 0;
+.journey-photos {
   margin: 44px 0 0;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
-.journey-steps li {
-  position: relative;
-}
-.journey-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 1px solid #ffffff45;
-  display: grid;
-  place-items: center;
-  color: #f0b48f;
-  margin-bottom: 16px;
-  background: #123d32;
-  position: relative;
-  z-index: 1;
-}
-.journey-steps svg {
-  stroke-width: 1.5;
-}
-.journey-steps li:not(:last-child):after {
-  content: "";
-  position: absolute;
-  top: 30px;
-  left: 72px;
-  right: -12px;
-  border-top: 1px dashed #ffffff45;
-}
-.journey-steps small {
-  color: #e0b77a;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-}
-.journey-steps h3 {
-  font-size: 1.35rem;
-  margin: 6px 0 8px;
-  color: #fff;
-}
-.journey-steps p {
-  font-size: 0.85rem;
-  color: #d1ded5;
+.journey-photos figure {
   margin: 0;
 }
-.journey-photo {
-  margin: 56px 0 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 340px)) 1fr;
-  gap: 24px;
-  align-items: center;
-}
-.journey-photo figure {
-  margin: 0;
-}
-.journey-photo img {
+.journey-photos img {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: 8px;
   display: block;
 }
-.journey-photo figcaption {
-  margin-top: 10px;
+.journey-photos figcaption {
+  margin-top: 12px;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #e0b77a;
 }
-.journey-photo h3 {
-  font-size: 2rem;
-  color: #fff;
-  margin: 0 0 12px 24px;
+.journey-photos figcaption small {
+  color: #ffffff80;
+  margin-right: 6px;
 }
-.journey-photo p {
+.journey-text {
   color: #d1ded5;
-  max-width: 440px;
-  margin: 0 0 0 24px;
-}
-@media (max-width: 900px) {
-  .journey-photo {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .journey-photo > div {
-    grid-column: 1 / -1;
-  }
-  .journey-photo h3,
-  .journey-photo p {
-    margin-left: 0;
-  }
+  max-width: 640px;
+  margin: 32px 0 0;
 }
 .press {
   background: #f9eee4;
@@ -2076,13 +2011,6 @@ small {
   .transform {
     gap: 32px;
   }
-  .journey-steps {
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 36px;
-  }
-  .journey-steps li:after {
-    display: none;
-  }
 }
 @media (max-width: 760px) {
   .transform {
@@ -2100,22 +2028,13 @@ small {
   .compare-tag.after {
     right: 10px;
   }
-  .journey-steps {
+  .journey-photos {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
     margin-top: 30px;
   }
-  .journey-steps li {
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    column-gap: 16px;
-  }
-  .journey-icon {
-    grid-row: span 3;
-    margin: 0;
-  }
-  .journey-steps h3 {
-    margin: 2px 0 4px;
+  .journey-photos img {
+    aspect-ratio: 4 / 5;
   }
   .press {
     padding: 46px 0;
