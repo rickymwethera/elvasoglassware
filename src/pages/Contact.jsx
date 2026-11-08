@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Phone, Instagram, MapPin, MessageCircle, Send } from "lucide-react";
-import { instagramUrl, tiktokUrl } from "../data";
+import { Phone, Instagram, MapPin, MessageCircle, Send, Clock } from "lucide-react";
+import { mapUrl, openingHours, instagramUrl, tiktokUrl } from "../data";
 import { whatsapp } from "../utils";
 
 // The "Contact" page. The form opens WhatsApp with a pre-filled message.
@@ -45,10 +45,15 @@ export default function Contact() {
             <h3>TikTok</h3>
             <p>@el.vaso.glassware</p>
           </a>
-          <div className="info-card">
+          <a href={mapUrl} target="_blank" rel="noreferrer" className="info-card">
             <span className="info-icon"><MapPin size={22} /></span>
-            <h3>Workshop</h3>
-            <p>Nairobi, Kenya</p>
+            <h3>Langata workshop</h3>
+            <p>Langata Hospital Complex, next to White Rose Dry Cleaners, Nairobi</p>
+          </a>
+          <div className="info-card">
+            <span className="info-icon"><Clock size={22} /></span>
+            <h3>Opening hours</h3>
+            <p>{openingHours}</p>
           </div>
         </div>
         <form className="contact-form" onSubmit={submit}>

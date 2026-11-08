@@ -248,3 +248,7 @@ export const instagramUrl = "https://www.instagram.com/elvaso_glassware/";
 export const pressUrl =
   "https://www.standardmedia.co.ke/environment-climate/article/2001556584/the-second-life-of-waste-turning-used-bottle-into-art-new-products";
 export const tiktokUrl = "https://www.tiktok.com/@el.vaso.glassware";
+// The Langata workshop's opening hours and a Google Maps search link to it.
+export const openingHours = "Monday to Saturday, 8 AM to 6 PM";
+export const mapUrl =
+  "https://www.google.com/maps/search/?api=1&query=Langata+Hospital+Complex+Nairobi";
