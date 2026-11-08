@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="container footer-columns">
         <div className="footer-brand">
           <button className="wordmark" onClick={() => go("/")}>
-            EL VASO
+            El Vaso
           </button>
           <p>
             Old bottles, new stories. Thoughtfully upcycled glassware,

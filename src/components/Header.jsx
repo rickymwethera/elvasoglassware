@@ -46,7 +46,7 @@ export default function Header({
               src={import.meta.env.BASE_URL + "images/logo-mark.png"}
               alt=""
             />
-            EL VASO
+            El Vaso
           </button>
           <nav className={menu ? "open" : ""}>
             {nav.map(([label, to]) => (
