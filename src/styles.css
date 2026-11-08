@@ -1924,6 +1924,36 @@ small {
   color: #d1ded5;
   margin: 0;
 }
+.journey-photo {
+  margin: 56px 0 0;
+  display: grid;
+  grid-template-columns: minmax(0, 440px) 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.journey-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.journey-photo h3 {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 0 12px;
+}
+.journey-photo p {
+  color: #d1ded5;
+  max-width: 440px;
+  margin: 0;
+}
+@media (max-width: 700px) {
+  .journey-photo {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
 .press {
   background: #f9eee4;
   padding: 64px 0;
