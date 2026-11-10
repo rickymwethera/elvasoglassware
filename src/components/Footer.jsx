@@ -1,5 +1,5 @@
-import { Instagram, Phone, MapPin, Send, Clock } from "lucide-react";
-import { categories, instagramUrl, tiktokUrl, mapUrl, phoneNumber, phoneDisplay } from "../data";
+import { Instagram, Linkedin, Phone, MapPin, Send, Clock } from "lucide-react";
+import { categories, instagramUrl, tiktokUrl, linkedinUrl, mapUrl, phoneNumber, phoneDisplay } from "../data";
 import { useApp } from "../AppContext";
 
 // Site footer with navigation links, categories and contact details.
@@ -48,6 +48,9 @@ export default function Footer() {
           </a>
           <a href={tiktokUrl} target="_blank" rel="noreferrer">
             <Send size={15} /> @el.vaso.glassware
+          </a>
+          <a href={linkedinUrl} target="_blank" rel="noreferrer">
+            <Linkedin size={15} /> El Vaso Glassware
           </a>
           <a href={mapUrl} target="_blank" rel="noreferrer">
             <MapPin size={15} /> Langata Hospital Complex, Nairobi
