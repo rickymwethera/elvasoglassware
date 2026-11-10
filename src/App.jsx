@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { products, shopEnabled } from "./data";
 import { BASE, route } from "./utils";
 import { AppContext } from "./AppContext";
+import { pages, SITE_NAME, SITE_URL } from "./seo";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CartPanel from "./components/CartPanel";
@@ -36,6 +37,23 @@ export default function App() {
     window.addEventListener("popstate", f);
     return () => window.removeEventListener("popstate", f);
   }, []);
+  // Keep the tab title, description and canonical link in step with the page.
+  useEffect(() => {
+    const product = path.startsWith("/products/")
+      ? products.find((p) => "/products/" + p.id === path)
+      : null;
+    const meta = pages[path] ||
+      (product && { title: `${product.name} | ${SITE_NAME}` }) ||
+      pages["/"];
+    document.title = meta.title;
+    if (meta.description)
+      document
+        .querySelector('meta[name="description"]')
+        ?.setAttribute("content", meta.description);
+    document
+      .querySelector('link[rel="canonical"]')
+      ?.setAttribute("href", SITE_URL + path);
+  }, [path]);
   // Navigates to another page: updates the URL, re-renders and scrolls to the top.
   // `to` is a path without the BASE prefix, e.g. "/our-story".
   const go = (to) => {

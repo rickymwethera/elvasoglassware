@@ -36,6 +36,8 @@ jobs:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
       # SPA fallback so deep links like /products load the app
       - run: cp dist/index.html dist/404.html
+      # A real page per route, with its own title, so Google indexes each one
+      - run: node scripts/prerender.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
