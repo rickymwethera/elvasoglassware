@@ -1,12 +1,12 @@
 import { defineConfig } from "vite";
 
-// On GitHub Pages the site is served from https://<owner>.github.io/<repo>/.
-// The repo name comes from GITHUB_REPOSITORY (set automatically in GitHub
-// Actions), so the build keeps working if the repository is renamed.
-const repo = (process.env.GITHUB_REPOSITORY || "").split("/")[1] || "elvasoglassware";
+// The deploy workflow passes BASE_PATH from GitHub Pages: empty when the site
+// has a custom domain (https://www.elvasoglassware.com/), "/<repo>" when it is
+// still served from https://<owner>.github.io/<repo>/. Locally it is "/".
+const base = (process.env.BASE_PATH || "").replace(/\/$/, "") + "/";
 
 export default defineConfig({
-  base: process.env.GITHUB_PAGES ? `/${repo}/` : "/",
+  base,
   // Use React's automatic JSX runtime so files don't need `import React`.
   esbuild: { jsx: "automatic" },
 });

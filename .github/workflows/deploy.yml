@@ -27,12 +27,15 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # Tells us the path the site is served from: "" on a custom domain,
+      # "/elvasoglassware" on the default github.io address.
+      - id: pages
+        uses: actions/configure-pages@v5
       - run: npm run build
         env:
-          GITHUB_PAGES: 'true'
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
       # SPA fallback so deep links like /products load the app
       - run: cp dist/index.html dist/404.html
-      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
