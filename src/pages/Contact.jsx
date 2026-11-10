@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Phone, Instagram, MapPin, MessageCircle, Send, Clock } from "lucide-react";
-import { mapUrl, openingHours, instagramUrl, tiktokUrl } from "../data";
+import { mapUrl, openingHours, instagramUrl, tiktokUrl, phoneNumber, phoneDisplay } from "../data";
 import { whatsapp } from "../utils";
 
 // The "Contact" page. The form opens WhatsApp with a pre-filled message.
@@ -25,10 +25,10 @@ export default function Contact() {
       </section>
       <section className="section container contact-layout">
         <div className="contact-cards">
-          <a href="tel:+254726881124" className="info-card">
+          <a href={"tel:" + phoneNumber} className="info-card">
             <span className="info-icon"><Phone size={22} /></span>
             <h3>Call us</h3>
-            <p>+254 726 881 124</p>
+            <p>{phoneDisplay}</p>
           </a>
           <button className="info-card" onClick={() => whatsapp("Hello El Vaso!")}>
             <span className="info-icon"><MessageCircle size={22} /></span>

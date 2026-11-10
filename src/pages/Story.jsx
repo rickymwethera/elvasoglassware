@@ -5,6 +5,7 @@ import { useApp } from "../AppContext";
 import Values from "../components/Values";
 import Journey from "../components/Journey";
 import BottleDrop from "../components/BottleDrop";
+import FounderVideo from "../components/FounderVideo";
 
 // The "Our story" page (also shown for /about and /sustainability).
 export default function Story() {
@@ -72,6 +73,7 @@ export default function Story() {
           Work with us <ArrowRight size={16} />
         </button>
       </section>
+      <FounderVideo />
       <Journey />
       <BottleDrop />
     </>

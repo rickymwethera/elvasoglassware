@@ -241,6 +241,9 @@ export const money = (n) => `KES ${Number(n).toLocaleString("en-KE")}`;
 export const priceLabel = (p) => (p.priceFrom ? "From " : "") + money(p.price);
 // El Vaso's WhatsApp number in international format, without the "+".
 export const whatsappNumber = "254726881124";
+// The workshop phone line, used for "Call us" links.
+export const phoneNumber = "+254116145308";
+export const phoneDisplay = "011 614 5308";
 // Set to true to bring back the cart, search, sorting/price filters and
 // add-to-cart buttons. Prices show either way.
 export const shopEnabled = false;
@@ -249,6 +252,6 @@ export const pressUrl =
   "https://www.standardmedia.co.ke/environment-climate/article/2001556584/the-second-life-of-waste-turning-used-bottle-into-art-new-products";
 export const tiktokUrl = "https://www.tiktok.com/@el.vaso.glassware";
 // The Langata workshop's opening hours and a Google Maps search link to it.
-export const openingHours = "Monday to Saturday, 8 AM to 6 PM";
+export const openingHours = "Monday to Saturday, 8 AM to 7 PM";
 export const mapUrl =
   "https://www.google.com/maps/search/?api=1&query=Langata+Hospital+Complex+Nairobi";
