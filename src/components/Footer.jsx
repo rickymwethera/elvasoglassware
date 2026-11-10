@@ -1,5 +1,5 @@
-import { Instagram, Phone, MapPin, Send, Clock } from "lucide-react";
-import { categories, whatsappNumber, instagramUrl, tiktokUrl, mapUrl } from "../data";
+import { Instagram, Linkedin, Phone, MapPin, Send, Clock } from "lucide-react";
+import { categories, instagramUrl, tiktokUrl, linkedinUrl, mapUrl, phoneNumber, phoneDisplay } from "../data";
 import { useApp } from "../AppContext";
 
 // Site footer with navigation links, categories and contact details.
@@ -40,12 +40,8 @@ export default function Footer() {
         </div>
         <div>
           <h4>Get in touch</h4>
-          <a
-            href={"https://wa.me/" + whatsappNumber}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Phone size={15} /> +254 726 881 124
+          <a href={"tel:" + phoneNumber}>
+            <Phone size={15} /> {phoneDisplay}
           </a>
           <a href={instagramUrl} target="_blank" rel="noreferrer">
             <Instagram size={15} /> @elvaso_glassware
@@ -53,11 +49,14 @@ export default function Footer() {
           <a href={tiktokUrl} target="_blank" rel="noreferrer">
             <Send size={15} /> @el.vaso.glassware
           </a>
+          <a href={linkedinUrl} target="_blank" rel="noreferrer">
+            <Linkedin size={15} /> El Vaso Glassware
+          </a>
           <a href={mapUrl} target="_blank" rel="noreferrer">
             <MapPin size={15} /> Langata Hospital Complex, Nairobi
           </a>
           <span>
-            <Clock size={15} /> Mon to Sat, 8 AM to 6 PM
+            <Clock size={15} /> Mon to Sat, 8 AM to 7 PM
           </span>
         </div>
       </div>

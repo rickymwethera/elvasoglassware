@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Phone, Instagram, MapPin, MessageCircle, Send, Clock } from "lucide-react";
-import { mapUrl, openingHours, instagramUrl, tiktokUrl } from "../data";
+import { Phone, Instagram, Linkedin, MapPin, MessageCircle, Send, Clock } from "lucide-react";
+import { mapUrl, openingHours, instagramUrl, tiktokUrl, linkedinUrl, phoneNumber, phoneDisplay } from "../data";
 import { whatsapp } from "../utils";
 
 // The "Contact" page. The form opens WhatsApp with a pre-filled message.
@@ -25,10 +25,10 @@ export default function Contact() {
       </section>
       <section className="section container contact-layout">
         <div className="contact-cards">
-          <a href="tel:+254726881124" className="info-card">
+          <a href={"tel:" + phoneNumber} className="info-card">
             <span className="info-icon"><Phone size={22} /></span>
             <h3>Call us</h3>
-            <p>+254 726 881 124</p>
+            <p>{phoneDisplay}</p>
           </a>
           <button className="info-card" onClick={() => whatsapp("Hello El Vaso!")}>
             <span className="info-icon"><MessageCircle size={22} /></span>
@@ -44,6 +44,11 @@ export default function Contact() {
             <span className="info-icon"><Send size={22} /></span>
             <h3>TikTok</h3>
             <p>@el.vaso.glassware</p>
+          </a>
+          <a href={linkedinUrl} target="_blank" rel="noreferrer" className="info-card">
+            <span className="info-icon"><Linkedin size={22} /></span>
+            <h3>LinkedIn</h3>
+            <p>El Vaso Glassware</p>
           </a>
           <a href={mapUrl} target="_blank" rel="noreferrer" className="info-card">
             <span className="info-icon"><MapPin size={22} /></span>

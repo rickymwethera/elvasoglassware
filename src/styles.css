@@ -2306,3 +2306,71 @@ button.info-card:hover,
     min-height: 0;
   }
 }
+/* Founder interview video on the Our story page */
+.founder-video {
+  text-align: center;
+}
+.founder-video figure {
+  max-width: 960px;
+  margin: 34px auto 0;
+}
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+}
+.video-frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.video-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  padding: clamp(16px, 3vw, 28px);
+  color: #fff;
+  background: linear-gradient(to top, #0b241dcc, #0b241d00 45%);
+}
+.video-play-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: clamp(56px, 8vw, 76px);
+  height: clamp(56px, 8vw, 76px);
+  padding-left: 4px;
+  border-radius: 50%;
+  background: #fff;
+  color: #123d32;
+  box-shadow: 0 10px 30px -10px #000a;
+  transition: transform 0.25s;
+}
+.video-play:hover .video-play-icon,
+.video-play:focus-visible .video-play-icon {
+  transform: scale(1.08);
+}
+.video-play-label {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  text-shadow: 0 1px 8px #0008;
+}
+.video-play-label small {
+  margin-left: 6px;
+  font: 400 0.8rem "DM Sans", sans-serif;
+  opacity: 0.85;
+}
+.founder-video figcaption {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: #d1ded5;
+}
+@media (max-width: 560px) {
+  .video-play-label {
+    display: none;
+  }
+}
