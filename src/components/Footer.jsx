@@ -1,6 +1,7 @@
-import { Instagram, Linkedin, Phone, MapPin, Send, Clock } from "lucide-react";
+import { Instagram, Linkedin, Phone, MapPin, Clock } from "lucide-react";
 import { categories, instagramUrl, tiktokUrl, linkedinUrl, mapUrl, phoneNumber, phoneDisplay } from "../data";
 import { useApp } from "../AppContext";
+import TikTokIcon from "./TikTokIcon";
 
 // Site footer with navigation links, categories and contact details.
 export default function Footer() {
@@ -47,7 +48,7 @@ export default function Footer() {
             <Instagram size={15} /> @elvaso_glassware
           </a>
           <a href={tiktokUrl} target="_blank" rel="noreferrer">
-            <Send size={15} /> @el.vaso.glassware
+            <TikTokIcon size={15} /> @el.vaso.glassware
           </a>
           <a href={linkedinUrl} target="_blank" rel="noreferrer">
             <Linkedin size={15} /> El Vaso Glassware
