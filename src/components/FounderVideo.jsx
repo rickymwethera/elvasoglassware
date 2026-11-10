@@ -45,8 +45,8 @@ export default function FounderVideo() {
           </div>
           <figcaption>
             Judith Ririani, CEO of El Vaso Glassware, on turning waste glass
-            into a business. Video by GrowthAfrica, funded by the Embassy of
-            Finland, Nairobi.
+            into a business. Video by GrowthAfrica and the Embassy of Finland,
+            Nairobi.
           </figcaption>
         </figure>
       </div>

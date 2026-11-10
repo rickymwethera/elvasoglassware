@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Phone, Instagram, Linkedin, MapPin, MessageCircle, Send, Clock } from "lucide-react";
+import { Phone, Instagram, Linkedin, MapPin, MessageCircle, Clock } from "lucide-react";
 import { mapUrl, openingHours, instagramUrl, tiktokUrl, linkedinUrl, phoneNumber, phoneDisplay } from "../data";
 import { whatsapp } from "../utils";
+import TikTokIcon from "../components/TikTokIcon";
 
 // The "Contact" page. The form opens WhatsApp with a pre-filled message.
 export default function Contact() {
@@ -41,7 +42,7 @@ export default function Contact() {
             <p>@elvaso_glassware</p>
           </a>
           <a href={tiktokUrl} target="_blank" rel="noreferrer" className="info-card">
-            <span className="info-icon"><Send size={22} /></span>
+            <span className="info-icon"><TikTokIcon size={20} /></span>
             <h3>TikTok</h3>
             <p>@el.vaso.glassware</p>
           </a>
