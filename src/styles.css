@@ -2279,23 +2279,69 @@ button.info-card:hover,
   }
 }
 /* The real photos are tall portraits: stop them from stretching their
-   section. The text sets the section height and the photo fills it. */
-.page-hero img,
+   section. The text sets the section height and the photo fills it.
+   The photo is taken out of the flow and pinned to its grid cell, rather
+   than using `contain: size`, which older iPhone Safari (16) mishandles
+   by squashing the photo instead of cropping it. */
+.hero-image img {
+  position: absolute;
+  inset: 0;
+}
+.custom-cta,
+.page-hero,
+.collection-bottom,
+.story-band {
+  position: relative;
+}
 .custom-cta > img,
-.collection-bottom img,
-.story-band > img,
+.page-hero > img,
+.collection-bottom > img,
+.story-band > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
+@media (min-width: 761px) {
+  .collection-bottom {
+    min-height: 320px;
+  }
+}
+.story-benefits {
+  grid-row: 1;
+  grid-column: 3;
+}
 .form-layout > div > img {
-  contain: size;
   min-height: 320px;
 }
 .custom-cta > img,
 .collection-bottom img {
   object-position: center 60%;
 }
-/* Keep the home hero within one screen: the photo fills the space the
-   text needs instead of setting the height itself. */
-.hero-image img {
-  contain: size;
+@media (max-width: 760px) {
+  .story-benefits {
+    grid-row: 2;
+    grid-column: 1 / -1;
+  }
+  /* Single-column layouts on phones give each photo a fixed height, so it
+     goes back into the normal flow. */
+  .custom-cta > img,
+  .page-hero > img {
+    position: static;
+    grid-row: auto;
+    grid-column: auto;
+    height: 320px;
+    min-height: 0;
+  }
+}
+@media (max-width: 430px) {
+  .story-band > img {
+    position: static;
+    height: 320px;
+  }
 }
 @media (min-width: 761px) {
   .hero {
@@ -2372,5 +2418,62 @@ button.info-card:hover,
 @media (max-width: 560px) {
   .video-play-label {
     display: none;
+  }
+}
+/* Product page on phones: name, price and description first, then a short
+   photo and the WhatsApp button, so both fit on the first screen. The
+   "How it's made" panel moves to the end. */
+@media (max-width: 760px) {
+  .product-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .product-main .gallery,
+  .product-main .details {
+    display: contents;
+  }
+  .product-main .details .eyebrow {
+    order: 1;
+  }
+  .product-main .details h1 {
+    order: 2;
+    margin: 4px 0 6px;
+  }
+  .product-main .detail-price {
+    order: 3;
+    margin: 0 0 10px;
+  }
+  .product-main .detail-description {
+    order: 4;
+    margin: 0 0 18px;
+  }
+  .product-main .large-photo {
+    order: 5;
+    margin-bottom: 18px;
+    border-radius: 6px;
+  }
+  .product-main .large-photo img {
+    aspect-ratio: 16 / 9;
+  }
+  .product-main .purchase-row,
+  .product-main .details > .btn {
+    order: 6;
+  }
+  .product-main .details > .btn-whatsapp {
+    order: 7;
+    background: #123d32;
+    border-color: #123d32;
+    color: #fff;
+  }
+  .product-main .detail-values {
+    order: 8;
+  }
+  .product-main .info-accordion {
+    order: 9;
+  }
+  .product-main .material-story {
+    order: 10;
+    margin-top: 28px;
   }
 }
