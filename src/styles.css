@@ -2374,3 +2374,60 @@ button.info-card:hover,
     display: none;
   }
 }
+/* Product page on phones: name, price and description first, then a short
+   photo and the WhatsApp button, so both fit on the first screen. The
+   "How it's made" panel moves to the end. */
+@media (max-width: 760px) {
+  .product-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .product-main .gallery,
+  .product-main .details {
+    display: contents;
+  }
+  .product-main .details .eyebrow {
+    order: 1;
+  }
+  .product-main .details h1 {
+    order: 2;
+    margin: 4px 0 6px;
+  }
+  .product-main .detail-price {
+    order: 3;
+    margin: 0 0 10px;
+  }
+  .product-main .detail-description {
+    order: 4;
+    margin: 0 0 18px;
+  }
+  .product-main .large-photo {
+    order: 5;
+    margin-bottom: 18px;
+    border-radius: 6px;
+  }
+  .product-main .large-photo img {
+    aspect-ratio: 16 / 9;
+  }
+  .product-main .purchase-row,
+  .product-main .details > .btn {
+    order: 6;
+  }
+  .product-main .details > .btn-whatsapp {
+    order: 7;
+    background: #123d32;
+    border-color: #123d32;
+    color: #fff;
+  }
+  .product-main .detail-values {
+    order: 8;
+  }
+  .product-main .info-accordion {
+    order: 9;
+  }
+  .product-main .material-story {
+    order: 10;
+    margin-top: 28px;
+  }
+}
