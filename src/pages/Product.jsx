@@ -11,6 +11,7 @@ import {
   Plus,
   MessageCircle,
 } from "lucide-react";
+import { SalePrice, salePrice, currentPriceLabel } from "../components/BlackFriday";
 import { products, money, priceLabel, shopEnabled } from "../data";
 import { A, whatsapp } from "../utils";
 import { useApp } from "../AppContext";
@@ -65,7 +66,7 @@ export default function Product({ p }) {
           <div className="eyebrow">HANDCRAFTED IN KENYA</div>
           <h1>{p.name}</h1>
           <div className="detail-price">
-            {priceLabel(p)} <small>{p.unit.toLowerCase()}</small>
+            <SalePrice p={p} detail /> <small>{p.unit.toLowerCase()}</small>
           </div>
           <p className="detail-description">
             {p.description}
@@ -124,8 +125,8 @@ export default function Product({ p }) {
             onClick={() =>
               whatsapp(
                 shopEnabled
-                  ? `Hello El Vaso! I'd like to enquire about ${qty} × ${p.name} (${money(p.price)} each).`
-                  : `Hello El Vaso! I'd love to know more about the ${p.name} (${priceLabel(p)}).`,
+                  ? `Hello El Vaso! I'd like to enquire about ${qty} × ${p.name} (${money(salePrice(p))} each).`
+                  : `Hello El Vaso! I'd love to know more about the ${p.name} (${currentPriceLabel(p)}).`,
               )
             }
           >
