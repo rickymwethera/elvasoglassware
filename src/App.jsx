@@ -3,6 +3,7 @@ import { products, shopEnabled } from "./data";
 import { BASE, route } from "./utils";
 import { AppContext } from "./AppContext";
 import { pages, SITE_NAME, SITE_URL } from "./seo";
+import { TopBar } from "./components/BlackFriday";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CartPanel from "./components/CartPanel";
@@ -103,6 +104,7 @@ export default function App() {
     <AppContext.Provider
       value={{ path, go, shop, add, favorites, toggleFavorite }}
     >
+      <TopBar />
       <Header
         menu={menu}
         setMenu={setMenu}

@@ -1,6 +1,7 @@
 import { Heart, Plus } from "lucide-react";
 import { priceLabel, shopEnabled } from "../data";
 import { useApp } from "../AppContext";
+import { SalePrice, SaleBadge } from "./BlackFriday";
 
 // A product tile used in product grids. Favourite and add-to-cart controls
 // only show when shopEnabled is true.
@@ -8,6 +9,7 @@ export default function ProductCard({ p }) {
   const { go, add, favorites, toggleFavorite } = useApp();
   return (
     <article className="product-card">
+      <SaleBadge />
       <button
         className="product-picture"
         onClick={() => go("/products/" + p.id)}
@@ -37,7 +39,7 @@ export default function ProductCard({ p }) {
           </button>
         </div>
         <div className="price-row">
-          <strong>{priceLabel(p)}</strong>
+          <SalePrice p={p} />
           <small>{p.unit}</small>
           {shopEnabled && (
             <button
