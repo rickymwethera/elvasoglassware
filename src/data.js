@@ -253,6 +253,6 @@ export const pressUrl =
 export const tiktokUrl = "https://www.tiktok.com/@el.vaso.glassware";
 export const linkedinUrl = "https://www.linkedin.com/company/el-vaso-glassware/";
 // The Langata workshop's opening hours and a Google Maps search link to it.
-export const openingHours = "Monday to Saturday, 8 AM to 7 PM";
+export const openingHours = "Monday to Saturday, 7 AM to 6:30 PM";
 export const mapUrl =
   "https://www.google.com/maps/search/?api=1&query=Langata+Hospital+Complex+Nairobi";
