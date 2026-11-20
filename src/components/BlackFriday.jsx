@@ -1,7 +1,7 @@
 import { Tag } from "lucide-react";
 import { money, priceLabel } from "../data";
 
-// Black Friday offer: 20% off every product from 20 to 30 November 2026
+// Black Friday offer: 20% off every product from 20th to 30th November 2026
 // (Nairobi time). Outside these dates the site shows normal prices and no
 // banner, so nothing needs changing when the offer ends.
 const SALE_START = new Date("2026-11-20T00:00:00+03:00");
@@ -44,7 +44,7 @@ export function TopBar() {
   return (
     <div className="bf-topbar">
       <Tag size={15} aria-hidden="true" /> <strong>BLACK FRIDAY</strong>
-      <span>20% off everything · 20 to 30 November</span>
+      <span>20% off everything · 20th to 30th November</span>
     </div>
   );
 }
