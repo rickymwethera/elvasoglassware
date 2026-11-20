@@ -57,7 +57,7 @@ export default function Footer() {
             <MapPin size={15} /> Langata Hospital Complex, Nairobi
           </a>
           <span>
-            <Clock size={15} /> Mon to Sat, 8 AM to 7 PM
+            <Clock size={15} /> Mon to Sat, 7 AM to 6:30 PM
           </span>
         </div>
       </div>
