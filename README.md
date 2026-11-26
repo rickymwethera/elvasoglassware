@@ -10,9 +10,12 @@ Responsive, slightly minimalist redesign based on the approved green + terracott
 4. Run `npm run dev`.
 5. Visit the localhost address shown by Vite (usually http://localhost:5173).
 
-To build for Cloudflare Pages, use the build command `npm run build:cloudflare` with output folder `dist` (Node version comes from `.nvmrc`). Unknown paths such as `/products/<slug>` fall back to the app automatically there, so no 404.html is needed.
+The site is hosted on Cloudflare Pages at https://www.elvasoglassware.com/ (Cloudflare project `elvasoglassware`, in the ELVASO account). Every merge to `main` deploys automatically, and every other branch gets its own preview link.
 
-To build for production, run `npm run build` and deploy the `dist` folder to Vercel. It is hosted on GitHub Pages at https://www.elvasoglassware.com/ (custom domain set under Settings → Pages). The deploy workflow reads the base path from Pages, so the build works on the custom domain and on the old github.io address alike.
+- Build command: `npm run build:cloudflare`, output folder `dist`. Node version comes from `.nvmrc`.
+- Unknown paths such as `/products/<slug>` fall back to the app automatically, so no 404.html is needed.
+- `functions/videos/[[path]].js` lets visitors skip through videos. Cloudflare Pages doesn't do that for static files on its own.
+- The bare domain elvasoglassware.com redirects to www with a Cloudflare Redirect Rule.
 
 ## Pages
 
