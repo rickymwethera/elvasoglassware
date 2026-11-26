@@ -1,0 +1,11 @@
+{
+  "name": "Short / Whiskey Glasses",
+  "category": "Glasses",
+  "price": 200,
+  "priceFrom": false,
+  "unit": "Per glass",
+  "image": "/images/whiskey-glasses.webp",
+  "description": "Short drinking glasses, perfect for whiskey.",
+  "order": 20,
+  "hidden": false
+}

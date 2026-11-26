@@ -1,0 +1,11 @@
+{
+  "name": "Floral Glasses",
+  "category": "Glasses",
+  "price": 200,
+  "priceFrom": false,
+  "unit": "Per glass",
+  "image": "/images/floral-glasses.webp",
+  "description": "Upcycled from printed wine bottles, so the bottle's floral print becomes part of the glass.",
+  "order": 50,
+  "hidden": false
+}

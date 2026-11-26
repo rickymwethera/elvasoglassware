@@ -1,0 +1,174 @@
+# Decap CMS settings for /admin. Docs: https://decapcms.org/docs/configuration-options/
+# base_url and api_root are filled in by index.html from the page's own address.
+backend:
+  name: github
+  repo: rickymwethera/elvasoglassware
+  branch: main
+  auth_endpoint: api/auth
+  commit_messages:
+    create: "Add {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "Upload photo “{{path}}”"
+    deleteMedia: "Delete photo “{{path}}”"
+
+# For testing on a computer: run `npx decap-server` next to `npm run dev`, then
+# open http://localhost:5173/admin/. Edits are saved to the local files.
+local_backend: true
+
+site_url: https://www.elvasoglassware.com
+display_url: https://www.elvasoglassware.com
+logo_url: /images/logo-wordmark.png
+locale: en
+
+# New photos go here. The build shrinks them to at most 1600 px wide.
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: products
+    label: Products
+    label_singular: Product
+    description: >-
+      Everything shown on the Collection page. Changes go live on the website
+      about 2 minutes after you press Publish.
+    folder: src/content/products
+    extension: json
+    format: json
+    create: true
+    delete: true
+    identifier_field: name
+    # The file name becomes the product's web address, e.g. /products/juice-glasses.
+    # It's set once when the product is created and doesn't change if you rename it.
+    slug: "{{slug}}"
+    summary: "{{name}} · KES {{price}}{{hidden | ternary(' · hidden', '')}}"
+    sortable_fields: [order, name, price, category]
+    view_groups:
+      - { label: Category, field: category }
+    fields:
+      - { label: Name, name: name, widget: string }
+      - label: Category
+        name: category
+        widget: relation
+        collection: site
+        file: categories
+        search_fields: ["categories.*.name"]
+        display_fields: ["categories.*.name"]
+        value_field: "categories.*.id"
+      - { label: Price in KES, name: price, widget: number, value_type: int, min: 0 }
+      - label: "Is this a starting price? (shows as “From KES …”)"
+        name: priceFrom
+        widget: boolean
+        default: false
+      - label: What the price covers
+        name: unit
+        widget: string
+        required: false
+        hint: "For example: Per glass, Set of 6, Per piece"
+      - label: Photo
+        name: image
+        widget: image
+        hint: "A clear, square-ish photo works best. Large phone photos are fine; the website shrinks them."
+      - { label: Description, name: description, widget: text }
+      - label: Position in the list
+        name: order
+        widget: number
+        value_type: int
+        default: 1000
+        required: false
+        hint: "Lower numbers show first. Current products use 10, 20, 30 … so you can slot one in between."
+      - label: Hide from the website
+        name: hidden
+        widget: boolean
+        default: false
+        hint: "Keeps the product saved here but takes it off the website, e.g. when out of stock."
+
+  - name: site
+    label: Site settings
+    editor: { preview: false }
+    files:
+      - name: contact
+        label: Contact details and shop switch
+        file: src/content/settings.json
+        fields:
+          - label: WhatsApp number
+            name: whatsappNumber
+            widget: string
+            hint: "International format without + or spaces, e.g. 254116145308"
+            pattern: ['^[0-9]{9,15}$', "Digits only, starting with the country code, e.g. 254116145308"]
+          - label: Phone number for “Call us” links
+            name: phoneNumber
+            widget: string
+            hint: "With +, e.g. +254116145308"
+          - label: Phone number as shown on the site
+            name: phoneDisplay
+            widget: string
+            hint: "e.g. 011 614 5308"
+          - { label: Opening hours, name: openingHours, widget: string }
+          - { label: Google Maps link, name: mapUrl, widget: string }
+          - { label: Instagram link, name: instagramUrl, widget: string }
+          - { label: TikTok link, name: tiktokUrl, widget: string }
+          - { label: LinkedIn link, name: linkedinUrl, widget: string }
+          - { label: Press article link, name: pressUrl, widget: string }
+          - label: Online shop switched on
+            name: shopEnabled
+            widget: boolean
+            hint: "Off: visitors enquire on WhatsApp. On: shows the cart, search and add-to-cart buttons."
+
+      - name: sale
+        label: Sale or special offer
+        file: src/content/sale.json
+        fields:
+          - label: Offer switched on
+            name: enabled
+            widget: boolean
+            hint: "The offer only shows between the start and end dates below, even when this is on."
+          - label: Banner title
+            name: label
+            widget: string
+            hint: "Bold text in the bar at the top of every page, e.g. BLACK FRIDAY"
+          - label: Banner message
+            name: message
+            widget: string
+            required: false
+            hint: "e.g. 20% off everything · 20th to 30th November"
+          - label: First day of the offer
+            name: start
+            widget: datetime
+            format: YYYY-MM-DD
+            date_format: DD MMMM YYYY
+            time_format: false
+            picker_utc: true
+          - label: Last day of the offer
+            name: end
+            widget: datetime
+            format: YYYY-MM-DD
+            date_format: DD MMMM YYYY
+            time_format: false
+            picker_utc: true
+            hint: "The offer runs until midnight at the end of this day, Nairobi time."
+          - label: Discount in %
+            name: discount
+            widget: number
+            value_type: int
+            min: 1
+            max: 90
+            hint: "Taken off every product's price, rounded to the nearest 10 shillings."
+
+      - name: categories
+        label: Product categories
+        file: src/content/categories.json
+        fields:
+          - label: Categories
+            name: categories
+            widget: list
+            allow_add: true
+            summary: "{{fields.name}}"
+            fields:
+              - label: Short code
+                name: id
+                widget: string
+                hint: "Used to link products to this category. Don't change it for an existing category, or its products will lose their category."
+              - { label: Name, name: name, widget: string }
+              - { label: Subtitle, name: sub, widget: string }
+              - { label: Photo, name: image, widget: image }

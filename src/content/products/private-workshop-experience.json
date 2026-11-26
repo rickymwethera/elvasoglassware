@@ -1,0 +1,11 @@
+{
+  "name": "Private Workshop Experience",
+  "category": "Services",
+  "price": 2500,
+  "priceFrom": false,
+  "unit": "Per adult",
+  "image": "/images/private-workshop.webp",
+  "description": "A private session in our workshop, making your own piece from a bottle. KES 2,500 per adult and KES 1,800 for kids under 15.",
+  "order": 160,
+  "hidden": false
+}

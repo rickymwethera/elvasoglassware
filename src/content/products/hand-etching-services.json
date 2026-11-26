@@ -1,0 +1,11 @@
+{
+  "name": "Hand Etching Services",
+  "category": "Services",
+  "price": 1000,
+  "priceFrom": true,
+  "unit": "Per piece",
+  "image": "/images/hand-etching.webp",
+  "description": "Detailed hand etching on bottles and larger pieces, from KES 1,000 depending on the design.",
+  "order": 190,
+  "hidden": false
+}

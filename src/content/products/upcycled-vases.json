@@ -1,0 +1,11 @@
+{
+  "name": "Upcycled Vases",
+  "category": "Vases",
+  "price": 700,
+  "priceFrom": false,
+  "unit": "Per vase",
+  "image": "/images/upcycled-vases.webp",
+  "description": "Clear upcycled vases for flower lovers.",
+  "order": 90,
+  "hidden": false
+}

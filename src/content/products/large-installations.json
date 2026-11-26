@@ -1,0 +1,11 @@
+{
+  "name": "Large Installations",
+  "category": "Services",
+  "price": 15000,
+  "priceFrom": true,
+  "unit": "Per project",
+  "image": "/images/large-installations.webp",
+  "description": "Bottle chandeliers, walls and statement pieces for homes and businesses. The price depends on the project.",
+  "order": 150,
+  "hidden": false
+}

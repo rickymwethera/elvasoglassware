@@ -1,0 +1,11 @@
+{
+  "name": "Machine Engraving",
+  "category": "Services",
+  "price": 300,
+  "priceFrom": true,
+  "unit": "Per piece",
+  "image": "/images/machine-engraving.webp",
+  "description": "Names, dates and logos engraved by machine. The price varies by size.",
+  "order": 200,
+  "hidden": false
+}

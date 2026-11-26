@@ -1,14 +1,20 @@
 import { Tag } from "lucide-react";
 import { money, priceLabel } from "../data";
+import sale from "../content/sale.json";
 
-// Black Friday offer: 20% off every product from 20th to 30th November 2026
-// (Nairobi time). Outside these dates the site shows normal prices and no
-// banner, so nothing needs changing when the offer ends.
-const SALE_START = new Date("2026-11-20T00:00:00+03:00");
-const SALE_END = new Date("2026-12-01T00:00:00+03:00");
-const DISCOUNT = 0.2;
+// The current offer (e.g. Black Friday), set in src/content/sale.json and
+// editable at /admin. It runs from the start date to the end of the end date,
+// Nairobi time. Outside those dates, or when switched off, the site shows
+// normal prices and no banner, so nothing needs changing when an offer ends.
+const DAY = 24 * 60 * 60 * 1000;
+const nairobiMidnight = (date) => new Date(`${date}T00:00:00+03:00`);
+const SALE_START = sale.start && nairobiMidnight(sale.start);
+const SALE_END = sale.end && new Date(nairobiMidnight(sale.end).getTime() + DAY);
+const PERCENT = Math.min(Math.max(Number(sale.discount) || 0, 0), 90);
+const DISCOUNT = PERCENT / 100;
 
 export const saleActive = () => {
+  if (!sale.enabled || !SALE_START || !SALE_END || !PERCENT) return false;
   const now = new Date();
   return now >= SALE_START && now < SALE_END;
 };
@@ -32,10 +38,10 @@ export function SalePrice({ p, detail }) {
   );
 }
 
-// "-20%" tag on the corner of a product photo.
+// "−20%"-style tag on the corner of a product photo.
 export function SaleBadge() {
   if (!saleActive()) return null;
-  return <span className="bf-badge">−20%</span>;
+  return <span className="bf-badge">−{PERCENT}%</span>;
 }
 
 // Thin black announcement bar shown above the header on every page.
@@ -43,8 +49,8 @@ export function TopBar() {
   if (!saleActive()) return null;
   return (
     <div className="bf-topbar">
-      <Tag size={15} aria-hidden="true" /> <strong>BLACK FRIDAY</strong>
-      <span>20% off everything · 20th to 30th November</span>
+      <Tag size={15} aria-hidden="true" /> <strong>{sale.label}</strong>
+      {sale.message && <span>{sale.message}</span>}
     </div>
   );
 }

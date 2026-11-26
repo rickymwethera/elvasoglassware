@@ -1,0 +1,11 @@
+{
+  "name": "Glasses On Clearance",
+  "category": "Glasses",
+  "price": 100,
+  "priceFrom": false,
+  "unit": "Per glass",
+  "image": "/images/clearance-glasses.webp",
+  "description": "Glasses on sale while stocks last. Ask us what is available.",
+  "order": 70,
+  "hidden": false
+}

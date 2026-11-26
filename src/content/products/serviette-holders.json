@@ -1,0 +1,11 @@
+{
+  "name": "Serviette Holders",
+  "category": "Home Essentials",
+  "price": 250,
+  "priceFrom": false,
+  "unit": "Per holder",
+  "image": "/images/serviette-holders.webp",
+  "description": "Bottle-glass holders for serviettes, at home or on a restaurant table.",
+  "order": 120,
+  "hidden": false
+}
