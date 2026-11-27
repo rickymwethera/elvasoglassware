@@ -1,11 +1,11 @@
 {
-  "name": "Bottle Cutting Services",
-  "category": "Services",
-  "price": 150,
-  "priceFrom": false,
   "unit": "Per bottle",
-  "image": "/images/bottle-cutting.webp",
-  "description": "Bring your own bottles. We cut, smoothen, resurface and clean each one.",
+  "price": 150,
+  "hidden": false,
+  "name": "Bottle Cutting Services",
   "order": 170,
-  "hidden": false
+  "priceFrom": false,
+  "image": "/images/bottle-cutting.webp",
+  "description": "Bring your own bottles. We cut, smoothen, resurface and clean each one",
+  "category": "Services"
 }
