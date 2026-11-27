@@ -1,0 +1,12 @@
+# Security headers Cloudflare Pages adds to every response.
+# nosniff: browsers must treat files as the type we say (a "photo" can't run as a script).
+# X-Frame-Options: other sites can't show our pages (or /admin) inside a frame to trick clicks.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Uploaded photos may never run scripts, even if a bad file got in.
+/images/uploads/*
+  Content-Security-Policy: default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; sandbox

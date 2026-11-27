@@ -26,9 +26,15 @@ const json = (status, body) =>
   });
 const refuse = (status, message) => json(status, { message });
 
+// Uploads must be photos, and product entries must be JSON. This stops anyone
+// slipping a web page or script (.html, .svg, .js) onto the site as a "photo".
+const PHOTO = /\.(jpe?g|png|webp|gif|avif)$/i;
+
 const isEditable = (path) =>
   EDITABLE.some((p) => (p.endsWith("/") ? path.startsWith(p) : path === p)) &&
-  !path.split("/").includes("..");
+  !path.split("/").includes("..") &&
+  (!path.startsWith("public/images/uploads/") || PHOTO.test(path)) &&
+  (!path.startsWith("src/content/products/") || /^src\/content\/products\/[^/]+\.json$/.test(path));
 
 export async function handleGithubProxy({ request, env, path }) {
   let email;
