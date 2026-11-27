@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>El Vaso admin</title>
+    <link rel="icon" href="/favicon.png" />
+  </head>
+  <body>
+    <!--
+      Staff editor for the site's products, photos and contact details (Decap CMS).
+      Cloudflare Access asks for an email code before this page loads. Saving goes
+      through /api/github, which holds the shared GitHub token (server/github-proxy.js).
+      Settings are in config.yml next to this file.
+    -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+      // Staff are already signed in through Cloudflare Access, so skip Decap's
+      // "Login with GitHub" screen. The token is a placeholder: the real one
+      // stays on the server.
+      try {
+        if (location.hostname !== "localhost" && !localStorage.getItem("decap-cms-user")) {
+          localStorage.setItem(
+            "decap-cms-user",
+            JSON.stringify({ token: "cloudflare-access", backendName: "github" })
+          );
+        }
+      } catch (e) {}
+    </script>
+    <script src="https://unpkg.com/decap-cms@3.17.3/dist/decap-cms.js"></script>
+    <script>
+      // Point Decap at this site's own GitHub connection, wherever the admin is
+      // opened from (the live site or a preview link).
+      CMS.init({
+        config: {
+          backend: {
+            base_url: location.origin,
+            api_root: location.origin + "/api/github",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

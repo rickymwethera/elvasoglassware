@@ -1,0 +1,11 @@
+{
+  "name": "Decorative Vases",
+  "category": "Vases",
+  "price": 999,
+  "priceFrom": false,
+  "unit": "Per vase",
+  "image": "/images/decorative-vases.webp",
+  "description": "Upcycled vases finished with an art detail.",
+  "order": 80,
+  "hidden": false
+}

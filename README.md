@@ -28,15 +28,26 @@ The site is hosted on Cloudflare Pages at https://www.elvasoglassware.com/ (Clou
 - `/sustainability` — impact and the journey of a bottle
 - `/contact` — contact details and a WhatsApp message form
 
+## Staff admin (/admin)
+
+Staff edit products, categories, contact details and sales at https://www.elvasoglassware.com/admin. It uses Decap CMS, with the content stored as JSON in `src/content/`. Each save is a commit to `main`, so the site redeploys within a couple of minutes.
+
+- Cloudflare Access guards `/admin*` and `/api/*`: staff log in with an emailed one-time code.
+- `functions/api/github/[[path]].js` passes Decap's GitHub calls on with one server-side token. It only lets edits through to `src/content/` and `public/images/uploads/`, and records the staff member's email on every commit.
+- Contact details (`settings.json`) and the sale (`sale.json`) can only be changed by the emails in `ADMIN_EMAILS`.
+- Uploaded photos are shrunk to 1600px wide during the build (`scripts/optimize-images.mjs`).
+- Environment variables on the Pages project: `GITHUB_TOKEN` (secret), `ACCESS_TEAM_DOMAIN`, `ACCESS_AUD`, `ADMIN_EMAILS`.
+- To try it locally, run `npx decap-server` next to `npm run dev` and open http://localhost:5173/admin/.
+
 ## Shop mode
 
-The site currently focuses on introducing the brand, so all shopping features are switched off with `shopEnabled = false` in `src/data.js`. That hides prices, the cart, search, price sorting/filters and add-to-cart buttons; product pages offer a WhatsApp enquiry instead. Set it to `true` to bring the shop back.
+The site currently focuses on introducing the brand, so all shopping features are switched off with `shopEnabled: false` in `src/content/settings.json`. That hides prices, the cart, search, price sorting/filters and add-to-cart buttons; product pages offer a WhatsApp enquiry instead. Set it to `true` (or tick it in /admin) to bring the shop back.
 
 ## Before going live
 
 - **All product names, prices, dimensions, stock and delivery claims are demo placeholders.** Confirm your real catalogue and policies with El Vaso.
 - Photos in `public/images` are El Vaso's own, chosen from the shared Google Drive folder and resized to WebP (max 1400px).
-- Replace the WhatsApp number in `src/data.js` if needed; currently it uses the number listed on the reference site.
+- Replace the WhatsApp number in `src/content/settings.json` (or in /admin) if needed; currently it uses the number listed on the reference site.
 - Checkout is intentionally a WhatsApp enquiry flow, _not_ a payment system. The cart is client-side memory only; it does not persist after refresh.
 - The custom order form has no server or database; submitting it opens WhatsApp with an editable message. No files are uploaded or stored.
 - Product reviews, verified stock, taxes and delivery estimates are intentionally omitted because they were not verifiable.
@@ -45,7 +56,8 @@ The site currently focuses on introducing the brand, so all shopping features ar
 ## Files
 
 - `src/main.jsx`: components, pages, client-side routing and interactions
-- `src/data.js`: catalogue/category seed data
+- `src/content/`: products, categories, contact details and sale settings (edited through /admin)
+- `src/data.js`: loads that content for the site
 - `src/styles.css`: global brand styling and responsive breakpoints
 - `public/images/`: El Vaso product, workshop and showroom photos
 

@@ -1,0 +1,11 @@
+{
+  "name": "Curated Gift Sets",
+  "category": "Home Essentials",
+  "price": 1999,
+  "priceFrom": true,
+  "unit": "Per set",
+  "image": "/images/gift-sets.webp",
+  "description": "Curated sets of El Vaso pieces, ready to give. Sets range from KES 2,400 to 3,500 depending on what goes in.",
+  "order": 140,
+  "hidden": false
+}

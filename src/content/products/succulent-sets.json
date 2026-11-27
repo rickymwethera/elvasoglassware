@@ -1,0 +1,11 @@
+{
+  "name": "Succulent Sets",
+  "category": "Home Essentials",
+  "price": 900,
+  "priceFrom": false,
+  "unit": "Per set",
+  "image": "/images/succulent-sets.webp",
+  "description": "Your succulents deserve a cute home.",
+  "order": 110,
+  "hidden": false
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Juice Glasses",
+  "category": "Glasses",
+  "price": 200,
+  "priceFrom": false,
+  "unit": "Per glass",
+  "image": "/images/juice-glasses.webp",
+  "description": "Simple upcycled glasses for everyday use at home or in a restaurant.",
+  "order": 30,
+  "hidden": false
+}

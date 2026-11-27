@@ -1,0 +1,11 @@
+{
+  "name": "Glass Hand Etching",
+  "category": "Services",
+  "price": 550,
+  "priceFrom": true,
+  "unit": "Per glass",
+  "image": "/images/glass-etching.webp",
+  "description": "Hand-etched designs on glasses. The price depends on the design and quantity.",
+  "order": 180,
+  "hidden": false
+}

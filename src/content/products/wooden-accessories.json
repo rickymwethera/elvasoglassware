@@ -1,0 +1,11 @@
+{
+  "name": "Wooden Accessories",
+  "category": "Home Essentials",
+  "price": 300,
+  "priceFrom": false,
+  "unit": "Per piece",
+  "image": "/images/wooden-accessories.webp",
+  "description": "Wooden lids, coasters and bases designed to fit El Vaso pieces.",
+  "order": 130,
+  "hidden": false
+}

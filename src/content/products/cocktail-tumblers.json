@@ -1,0 +1,11 @@
+{
+  "name": "Cocktail Tumblers (with wooden lids)",
+  "category": "Glasses",
+  "price": 500,
+  "priceFrom": false,
+  "unit": "Per tumbler",
+  "image": "/images/cocktail-tumblers.webp",
+  "description": "Bottle tumblers with a fitted wooden lid and room for a straw.",
+  "order": 60,
+  "hidden": false
+}

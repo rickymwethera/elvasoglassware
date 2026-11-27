@@ -1,0 +1,11 @@
+{
+  "name": "Thick Glasses",
+  "category": "Glasses",
+  "price": 400,
+  "priceFrom": false,
+  "unit": "Per glass",
+  "image": "/images/thick-glasses.webp",
+  "description": "Thick, quality glasses for whiskey fans.",
+  "order": 40,
+  "hidden": false
+}

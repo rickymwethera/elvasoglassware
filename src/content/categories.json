@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "id": "Glasses",
+      "name": "Glasses",
+      "sub": "Drinking glasses & tumblers",
+      "image": "/images/cat-glasses.webp"
+    },
+    {
+      "id": "Home Essentials",
+      "name": "Home Essentials",
+      "sub": "Jars, holders, succulents & gifts",
+      "image": "/images/cat-home.webp"
+    },
+    {
+      "id": "Vases",
+      "name": "Vases",
+      "sub": "Decorative & upcycled vases",
+      "image": "/images/cat-vases.webp"
+    },
+    {
+      "id": "Services",
+      "name": "Services",
+      "sub": "Installations, workshops, cutting & etching",
+      "image": "/images/cat-services.webp"
+    }
+  ]
+}

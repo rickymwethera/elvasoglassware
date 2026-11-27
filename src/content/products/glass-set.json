@@ -1,0 +1,11 @@
+{
+  "name": "Glass Set (6 pieces)",
+  "category": "Glasses",
+  "price": 1050,
+  "priceFrom": false,
+  "unit": "Set of 6",
+  "image": "/images/glass-set.webp",
+  "description": "Any six glasses, in one design or a mix of designs.",
+  "order": 10,
+  "hidden": false
+}

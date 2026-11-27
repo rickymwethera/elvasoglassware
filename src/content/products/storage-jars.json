@@ -1,0 +1,11 @@
+{
+  "name": "Storage Jars",
+  "category": "Home Essentials",
+  "price": 975,
+  "priceFrom": false,
+  "unit": "Per jar",
+  "image": "/images/storage-jars.webp",
+  "description": "Upcycled glass jars with a wooden lid, for the kitchen, bathroom or office.",
+  "order": 100,
+  "hidden": false
+}
